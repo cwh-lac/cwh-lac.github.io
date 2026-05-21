@@ -1,2 +1,2 @@
 # cwh-lac.github.io
-cwh-lac.github.io/CD13_Public_Parcel
+[Public Parcels](cwh-lac.github.io/CD13_Public_Parcels)
