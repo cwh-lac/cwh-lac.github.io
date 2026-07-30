@@ -507,7 +507,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (270 > 240) {
+        if (330 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -521,13 +521,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Affordable Covenants from Controller\'s data. Only shows 2010 onwards)<br />LAHD Affordable Housing list from LAHD. Shows projects financed by LAHD. Only shows 2003 onwards.<br />AH building permits from LADBS. Shows projects that received C of O. Separated into layers by decades.';
+                linkElement.innerHTML = 'Affordable Covenants from Controller\'s data. Only shows 2010 onwards)<br />LAHD Affordable Housing list from LAHD. Shows projects financed by LAHD. Only shows 2003 onwards.<br />AH building permits from LADBS. Shows projects with desecriptions mentioning affordable housing, PSH, etc. that received C of O. Separated into layers by decades.';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Affordable Covenants from Controller\'s data. Only shows 2010 onwards)<br />LAHD Affordable Housing list from LAHD. Shows projects financed by LAHD. Only shows 2003 onwards.<br />AH building permits from LADBS. Shows projects that received C of O. Separated into layers by decades.';
+            linkElement.innerHTML = 'Affordable Covenants from Controller\'s data. Only shows 2010 onwards)<br />LAHD Affordable Housing list from LAHD. Shows projects financed by LAHD. Only shows 2003 onwards.<br />AH building permits from LADBS. Shows projects with desecriptions mentioning affordable housing, PSH, etc. that received C of O. Separated into layers by decades.';
         }
 
         titleElement.appendChild(linkElement);
