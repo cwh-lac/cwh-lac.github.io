@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-13177019.755733, 4035301.672518, -13162301.843156, 4044160.607585], map.getSize());
+map.getView().fit([-13182083.442482, 4034033.234088, -13152647.617327, 4051751.104222], map.getSize());
 
 //change cursor
 function pointerOnFeature(evt) {
@@ -499,6 +499,44 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //abstract
 
+var Abstract = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'top-right-abstract ol-control';
+        titleElement.id = 'abstract';
+
+        var linkElement = document.createElement('a');
+
+        if (270 > 240) {
+            linkElement.setAttribute("onmouseenter", "showAbstract()");
+            linkElement.setAttribute("onmouseleave", "hideAbstract()");
+            linkElement.innerHTML = 'i';
+
+            window.hideAbstract = function() {
+                linkElement.classList.add("project-abstract");
+                linkElement.classList.remove("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'i';
+            }
+
+            window.showAbstract = function() {
+                linkElement.classList.remove("project-abstract");
+                linkElement.classList.add("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'Affordable Covenants from Controller\'s data. Only shows 2010 onwards)<br />LAHD Affordable Housing list from LAHD. Shows projects financed by LAHD. Only shows 2003 onwards.<br />AH building permits from LADBS. Shows projects that received C of O. Separated into layers by decades.';
+            }
+
+            hideAbstract();
+        } else {
+            linkElement.classList.add("project-abstract-uncollapsed");
+            linkElement.innerHTML = 'Affordable Covenants from Controller\'s data. Only shows 2010 onwards)<br />LAHD Affordable Housing list from LAHD. Shows projects financed by LAHD. Only shows 2003 onwards.<br />AH building permits from LADBS. Shows projects that received C of O. Separated into layers by decades.';
+        }
+
+        titleElement.appendChild(linkElement);
+        return titleElement;
+    })(),
+    target: 'top-right-container'
+});
+map.addControl(Abstract);
+
 
 //geolocate
 
@@ -522,11 +560,22 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 //layerswitcher
 
 var layerSwitcher = new ol.control.LayerSwitcher({
-    tipLabel: "Layers",
-    target: 'top-right-container'
-});
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
 map.addControl(layerSwitcher);
-    
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
+
 
 
 
