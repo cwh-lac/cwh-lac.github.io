@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_AHbuildingpermits_before2010_4 = function(feature, resolution){
+var style_AHbuildingpermitandCOO_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
