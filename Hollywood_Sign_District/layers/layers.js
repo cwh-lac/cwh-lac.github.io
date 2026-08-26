@@ -21,7 +21,7 @@ var wms_layers = [];
             
             source: new ol.source.XYZ({
             attributions: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 4.0. Data by OpenStreetMap, under ODbL.</a>',
-                url: 'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+                url: 'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png?key=cb1_290h_1_79d1414b608ccd0b8e20c49f'
             })
         });
 var format_HollywoodSignDistrict_2 = new ol.format.GeoJSON();
