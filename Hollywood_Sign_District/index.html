@@ -49,7 +49,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[34.08277141948736,-118.36215110157201],[34.11144259431856,-118.2927395949583]]);
+        }).fitBounds([[34.093554044367096,-118.34501914878025],[34.10788901973407,-118.31323313462838]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -571,76 +571,100 @@
         function pop_TierB_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">OBJECTID</th>\
+                        <td>' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ASSETID'] !== null ? autolinker.link(String(feature.properties['ASSETID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ASSETID</th>\
+                        <td>' + (feature.properties['ASSETID'] !== null ? autolinker.link(String(feature.properties['ASSETID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MAPSHEET'] !== null ? autolinker.link(String(feature.properties['MAPSHEET']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">MAPSHEET</th>\
+                        <td>' + (feature.properties['MAPSHEET'] !== null ? autolinker.link(String(feature.properties['MAPSHEET']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(String(feature.properties['ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(String(feature.properties['ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['BPP'] !== null ? autolinker.link(String(feature.properties['BPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">BPP</th>\
+                        <td>' + (feature.properties['BPP'] !== null ? autolinker.link(String(feature.properties['BPP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MAP_REF'] !== null ? autolinker.link(String(feature.properties['MAP_REF']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">MAP_REF</th>\
+                        <td>' + (feature.properties['MAP_REF'] !== null ? autolinker.link(String(feature.properties['MAP_REF']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['TRACT'] !== null ? autolinker.link(String(feature.properties['TRACT']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">TRACT</th>\
+                        <td>' + (feature.properties['TRACT'] !== null ? autolinker.link(String(feature.properties['TRACT']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['BLOCK'] !== null ? autolinker.link(String(feature.properties['BLOCK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">BLOCK</th>\
+                        <td>' + (feature.properties['BLOCK'] !== null ? autolinker.link(String(feature.properties['BLOCK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MOD'] !== null ? autolinker.link(String(feature.properties['MOD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">MOD</th>\
+                        <td>' + (feature.properties['MOD'] !== null ? autolinker.link(String(feature.properties['MOD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['LOT'] !== null ? autolinker.link(String(feature.properties['LOT']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">LOT</th>\
+                        <td>' + (feature.properties['LOT'] !== null ? autolinker.link(String(feature.properties['LOT']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ARB'] !== null ? autolinker.link(String(feature.properties['ARB']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ARB</th>\
+                        <td>' + (feature.properties['ARB'] !== null ? autolinker.link(String(feature.properties['ARB']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PIND'] !== null ? autolinker.link(String(feature.properties['PIND']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">PIND</th>\
+                        <td>' + (feature.properties['PIND'] !== null ? autolinker.link(String(feature.properties['PIND']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PIN'] !== null ? autolinker.link(String(feature.properties['PIN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">PIN</th>\
+                        <td>' + (feature.properties['PIN'] !== null ? autolinker.link(String(feature.properties['PIN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['BOOK'] !== null ? autolinker.link(String(feature.properties['BOOK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">BOOK</th>\
+                        <td>' + (feature.properties['BOOK'] !== null ? autolinker.link(String(feature.properties['BOOK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PAGE'] !== null ? autolinker.link(String(feature.properties['PAGE']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">PAGE</th>\
+                        <td>' + (feature.properties['PAGE'] !== null ? autolinker.link(String(feature.properties['PAGE']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PARCEL'] !== null ? autolinker.link(String(feature.properties['PARCEL']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">PARCEL</th>\
+                        <td>' + (feature.properties['PARCEL'] !== null ? autolinker.link(String(feature.properties['PARCEL']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ENG_DIST'] !== null ? autolinker.link(String(feature.properties['ENG_DIST']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ENG_DIST</th>\
+                        <td>' + (feature.properties['ENG_DIST'] !== null ? autolinker.link(String(feature.properties['ENG_DIST']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['CNCL_DIST'] !== null ? autolinker.link(String(feature.properties['CNCL_DIST']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">CNCL_DIST</th>\
+                        <td>' + (feature.properties['CNCL_DIST'] !== null ? autolinker.link(String(feature.properties['CNCL_DIST']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NLA_URL'] !== null ? autolinker.link(String(feature.properties['NLA_URL']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">NLA_URL</th>\
+                        <td>' + (feature.properties['NLA_URL'] !== null ? autolinker.link(String(feature.properties['NLA_URL']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['TOOLTIP'] !== null ? autolinker.link(String(feature.properties['TOOLTIP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">TOOLTIP</th>\
+                        <td>' + (feature.properties['TOOLTIP'] !== null ? autolinker.link(String(feature.properties['TOOLTIP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ENG_DIST_DESC'] !== null ? autolinker.link(String(feature.properties['ENG_DIST_DESC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">ENG_DIST_DESC</th>\
+                        <td>' + (feature.properties['ENG_DIST_DESC'] !== null ? autolinker.link(String(feature.properties['ENG_DIST_DESC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">layer</th>\
+                        <td>' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">path</th>\
+                        <td>' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -678,6 +702,7 @@
             style: style_TierB_6_0,
         });
         bounds_group.addLayer(layer_TierB_6);
+        map.addLayer(layer_TierB_6);
         function pop_TierBSunsetExtension_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
